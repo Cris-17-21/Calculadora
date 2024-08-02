@@ -1,5 +1,7 @@
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class Interfaz extends JFrame{
@@ -24,10 +26,12 @@ public class Interfaz extends JFrame{
         panel.add(txtf);
         txtf.setFont(new Font(getName(), 1, 30));
         txtf.setEditable(false);
+        txtf.setColumns(ALLBITS);
         txtf.setBounds(20, 60, 370, 50);
         //Resultado
-        JTextField resultado = new JTextField();
+        JTextField resultado = new JTextField("=");
         panel.add(resultado);
+        resultado.setHorizontalAlignment(JTextField.RIGHT);
         resultado.setFont(new Font(getName(), 1, 30));
         resultado.setEditable(false);
         resultado.setBounds(20, 110, 370, 50);
@@ -94,5 +98,10 @@ public class Interfaz extends JFrame{
         btn3.setBounds(220, 580, 170, 70);
 
         //EVENTOS
+        btn7.addActionListener(new ActionListener() {
+            public void actionPerformed (ActionEvent e){
+                txtf.setText("+");
+            }
+        });
     }
 }
