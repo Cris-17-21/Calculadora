@@ -22,6 +22,7 @@ public class Interfaz extends JFrame{
         //Pantalla
         JTextField txtf = new JTextField();
         panel.add(txtf);
+        txtf.setFont(new Font(getName(), 1, 30));
         txtf.setBounds(20, 60, 370, 50);
         //Botones
         JButton btn1 = new JButton("0");
