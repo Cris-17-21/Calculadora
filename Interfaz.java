@@ -23,7 +23,15 @@ public class Interfaz extends JFrame{
         JTextField txtf = new JTextField();
         panel.add(txtf);
         txtf.setFont(new Font(getName(), 1, 30));
+        txtf.setEditable(false);
         txtf.setBounds(20, 60, 370, 50);
+        //Resultado
+        JTextField resultado = new JTextField();
+        panel.add(resultado);
+        resultado.setFont(new Font(getName(), 1, 30));
+        resultado.setEditable(false);
+        resultado.setBounds(20, 110, 370, 50);
+        /*
         //Botones
         JButton btn1 = new JButton("0");
         JButton btn2 = new JButton(".");
@@ -85,5 +93,13 @@ public class Interfaz extends JFrame{
         btn1.setBounds(20, 530, 70, 70);
         btn2.setBounds(120, 530, 70, 70);
         btn3.setBounds(220, 530, 170, 70);
+
+        //EVENTOS
+        btn7.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                txtf.setText("+");
+            }
+        });*/
     }
 }
