@@ -5,7 +5,7 @@ import javax.swing.*;
 public class Interfaz extends JFrame{
     public Interfaz (){
         super("Calculadora");
-        setSize(420, 650);
+        setSize(420, 700);
         setLocation(500, 100);
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -31,7 +31,6 @@ public class Interfaz extends JFrame{
         resultado.setFont(new Font(getName(), 1, 30));
         resultado.setEditable(false);
         resultado.setBounds(20, 110, 370, 50);
-        /*
         //Botones
         JButton btn1 = new JButton("0");
         JButton btn2 = new JButton(".");
@@ -74,32 +73,26 @@ public class Interfaz extends JFrame{
         btn17.setFont(new Font(getName(), 1, 30));
         btn18.setFont(new Font(getName(), 1, 30));
         btn19.setFont(new Font(getName(), 1, 30));
-        btn16.setBounds(20, 130, 70, 70);
-        btn17.setBounds(120, 130, 70, 70);
-        btn18.setBounds(220, 130, 70, 70);
-        btn19.setBounds(320, 130, 70, 70);
-        btn12.setBounds(20, 230, 70, 70);
-        btn13.setBounds(120, 230, 70, 70);
-        btn14.setBounds(220, 230, 70, 70);
-        btn15.setBounds(320, 230, 70, 70);
-        btn8.setBounds(20, 330, 70, 70);
-        btn9.setBounds(120, 330, 70, 70);
-        btn10.setBounds(220, 330, 70, 70);
-        btn11.setBounds(320, 330, 70, 70);
-        btn4.setBounds(20, 430, 70, 70);
-        btn5.setBounds(120, 430, 70, 70);
-        btn6.setBounds(220, 430, 70, 70);
-        btn7.setBounds(320, 430, 70, 70);
-        btn1.setBounds(20, 530, 70, 70);
-        btn2.setBounds(120, 530, 70, 70);
-        btn3.setBounds(220, 530, 170, 70);
+        btn16.setBounds(20, 180, 70, 70);
+        btn17.setBounds(120, 180, 70, 70);
+        btn18.setBounds(220, 180, 70, 70);
+        btn19.setBounds(320, 180, 70, 70);
+        btn12.setBounds(20, 280, 70, 70);
+        btn13.setBounds(120, 280, 70, 70);
+        btn14.setBounds(220, 280, 70, 70);
+        btn15.setBounds(320, 280, 70, 70);
+        btn8.setBounds(20, 380, 70, 70);
+        btn9.setBounds(120, 380, 70, 70);
+        btn10.setBounds(220, 380, 70, 70);
+        btn11.setBounds(320, 380, 70, 70);
+        btn4.setBounds(20, 480, 70, 70);
+        btn5.setBounds(120, 480, 70, 70);
+        btn6.setBounds(220, 480, 70, 70);
+        btn7.setBounds(320, 480, 70, 70);
+        btn1.setBounds(20, 580, 70, 70);
+        btn2.setBounds(120, 580, 70, 70);
+        btn3.setBounds(220, 580, 170, 70);
 
         //EVENTOS
-        btn7.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e){
-                txtf.setText("+");
-            }
-        });*/
     }
 }
