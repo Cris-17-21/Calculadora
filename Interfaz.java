@@ -5,7 +5,7 @@ import javax.swing.*;
 public class Interfaz extends JFrame{
     public Interfaz (){
         super("Calculadora");
-        setSize(500, 700);
+        setSize(420, 700);
         setLocation(500, 100);
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -18,11 +18,11 @@ public class Interfaz extends JFrame{
         JLabel titulo = new JLabel("Calculadora PRO");
         panel.add(titulo);
         titulo.setFont(new Font(getName(), 1, 30));
-        titulo.setBounds(130, 10, 260, 30);
+        titulo.setBounds(90, 10, 260, 30);
         //Pantalla
         JTextField txtf = new JTextField();
         panel.add(txtf);
-        txtf.setBounds(20, 60, 450, 50);
+        txtf.setBounds(20, 60, 370, 50);
         //Botones
         JButton btn1 = new JButton("0");
         JButton btn2 = new JButton(".");
@@ -46,6 +46,28 @@ public class Interfaz extends JFrame{
         panel.add(btn1); panel.add(btn2); panel.add(btn3); panel.add(btn4); panel.add(btn5); panel.add(btn6); panel.add(btn7); panel.add(btn8); panel.add(btn9);
         panel.add(btn10); panel.add(btn11); panel.add(btn12); panel.add(btn13); panel.add(btn14); panel.add(btn15); panel.add(btn16); panel.add(btn17);
         panel.add(btn18); panel.add(btn19);
-        
+        btn1.setFont(new Font(getName(), 1, 30));
+        btn2.setFont(new Font(getName(), 1, 30));
+        btn3.setFont(new Font(getName(), 1, 30));
+        btn4.setFont(new Font(getName(), 1, 30));
+        btn5.setFont(new Font(getName(), 1, 30));
+        btn6.setFont(new Font(getName(), 1, 30));
+        btn7.setFont(new Font(getName(), 1, 30));
+        btn8.setFont(new Font(getName(), 1, 30));
+        btn9.setFont(new Font(getName(), 1, 30));
+        btn10.setFont(new Font(getName(), 1, 30));
+        btn11.setFont(new Font(getName(), 1, 30));
+        btn12.setFont(new Font(getName(), 1, 30));
+        btn13.setFont(new Font(getName(), 1, 30));
+        btn14.setFont(new Font(getName(), 1, 30));
+        btn15.setFont(new Font(getName(), 1, 30));
+        btn16.setFont(new Font(getName(), 1, 30));
+        btn17.setFont(new Font(getName(), 1, 30));
+        btn18.setFont(new Font(getName(), 1, 30));
+        btn19.setFont(new Font(getName(), 1, 30));
+        btn16.setBounds(20, 130, 70, 70);
+        btn17.setBounds(120, 130, 70, 70);
+        btn18.setBounds(220, 130, 70, 70);
+        btn19.setBounds(320, 130, 70, 70);
     }
 }
