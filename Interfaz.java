@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class Interfaz extends JFrame{
-    int aux;
+    String operacion;
 
     public Interfaz (){
         super("Calculadora");
@@ -103,36 +103,43 @@ public class Interfaz extends JFrame{
         btn7.addActionListener(new ActionListener() {
             public void actionPerformed (ActionEvent e){
                 txtf.setText(txtf.getText()+"+");
+                operacion = "suma";
             }
         });
         btn11.addActionListener(new ActionListener() {
             public void actionPerformed (ActionEvent e){
                 txtf.setText(txtf.getText()+"-");
+                operacion = "resta";
             }
         });
         btn15.addActionListener(new ActionListener() {
             public void actionPerformed (ActionEvent e){
                 txtf.setText(txtf.getText()+"x");
+                operacion = "multiplicacion";
             }
         });
         btn16.addActionListener(new ActionListener() {
             public void actionPerformed (ActionEvent e){
                 txtf.setText(txtf.getText()+"√");
+                operacion = "raiz";
             }
         });
         btn17.addActionListener(new ActionListener() {
             public void actionPerformed (ActionEvent e){
                 txtf.setText(txtf.getText()+"^");
+                operacion = "potencia";
             }
         });
         btn18.addActionListener(new ActionListener() {
             public void actionPerformed (ActionEvent e){
                 txtf.setText(txtf.getText()+"!");
+                operacion = "factorial";
             }
         });
         btn19.addActionListener(new ActionListener() {
             public void actionPerformed (ActionEvent e){
                 txtf.setText(txtf.getText()+"/");
+                operacion = "division";
             }
         });
 
@@ -196,11 +203,67 @@ public class Interfaz extends JFrame{
         //Resultado
         btn3.addActionListener(new ActionListener() {
             public void actionPerformed (ActionEvent e){
-                String texto = String.valueOf(txtf.getText());
-                int operacion = Integer.parseInt(texto);
-                resultado.setText(String.valueOf(operacion));
+                double [] numeros = encontrarNumero(txtf);
+                double resultadazo = resultadoOperacion(operacion, numeros);
+                resultado.setText(String.valueOf(resultadazo));
             }
         });
     }
+    public double [] encontrarNumero(JTextField txtf){
+        double [] numerazos = new double [2];
+        double numero1;
+        double numero2;
+        char [] listaOperaciones = {'+', '-', '*', '/', '√', '^', '!'};
+        char [] numeros = new char [String.valueOf(txtf.getText()).length()];
+        for (int i = 0; i < String.valueOf(txtf.getText()).length(); i++){
+            numeros [i] = txtf.getText().charAt(i);
+        }
+        for (int i = 0; i < String.valueOf(txtf.getText()).length(); i++){
+            for (int j = 0; j < 7; j++){
+                if(numeros[i] == listaOperaciones[j]){
+                    char [] numero1aux = new char [i];
+                    char [] numero2aux = new char [String.valueOf(txtf.getText()).length() - i];
+                    for (int z = 0; z < i; z++){
+                        numero1aux[z] = numeros[z];
+                    }
+                    for (int w = 0; w < numero2aux.length; w++){
+                        numero2aux[w] = numeros[w+i];
+                    }
+                    numero1 = Double.parseDouble(String.copyValueOf(numero1aux));
+                    numero2 = Double.parseDouble(String.copyValueOf(numero2aux));
+                    numerazos[0] = numero1;
+                    numerazos[1] = numero2;
+                }
+            }
+        }
+        return numerazos;
+    }
 
+    public double resultadoOperacion (String operacion, double [] numeros){
+        if (operacion == "suma"){
+            return numeros[0] + numeros[1];
+        } else if(operacion == "resta"){
+            return numeros[0] - numeros[1];
+        } else if (operacion == "multiplicacion"){
+            return numeros[0] * numeros[1];
+        } else if (operacion == "division"){
+            return numeros[0] / numeros[1];
+        } else if (operacion == "raiz"){
+            return Math.sqrt(numeros[0]);
+        } else if (operacion == "factorial"){
+            if(numeros[0] == 0){
+                return 1;
+            } else {
+                double aux = 1;
+                for(int i = 1; i <= numeros[0]; i++){
+                    aux = aux * i;
+                }    
+                return aux;
+            }
+        } else if (operacion == "potencia"){
+            return Math.pow(numeros[0], numeros[1]);
+        } else {
+            return 0;
+        }
+    }
 }
