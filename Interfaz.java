@@ -2,9 +2,14 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.swing.*;
 
 public class Interfaz extends JFrame{
+    int aux;
+
     public Interfaz (){
         super("Calculadora");
         setSize(420, 700);
@@ -22,11 +27,10 @@ public class Interfaz extends JFrame{
         titulo.setFont(new Font(getName(), 1, 30));
         titulo.setBounds(90, 10, 260, 30);
         //Pantalla
-        JTextField txtf = new JTextField();
+        JTextField txtf = new JTextField("");
         panel.add(txtf);
         txtf.setFont(new Font(getName(), 1, 30));
-        txtf.setEditable(false);
-        txtf.setColumns(ALLBITS);
+        txtf.setEditable(false);;
         txtf.setBounds(20, 60, 370, 50);
         //Resultado
         JTextField resultado = new JTextField("=");
@@ -98,10 +102,68 @@ public class Interfaz extends JFrame{
         btn3.setBounds(220, 580, 170, 70);
 
         //EVENTOS
+        //Operadores
         btn7.addActionListener(new ActionListener() {
             public void actionPerformed (ActionEvent e){
-                txtf.setText("+");
+                txtf.setText(txtf.getText()+"+");
             }
         });
+        btn11.addActionListener(new ActionListener() {
+            public void actionPerformed (ActionEvent e){
+                txtf.setText(txtf.getText()+"-");
+            }
+        });
+        btn15.addActionListener(new ActionListener() {
+            public void actionPerformed (ActionEvent e){
+                txtf.setText(txtf.getText()+"x");
+            }
+        });
+        btn16.addActionListener(new ActionListener() {
+            public void actionPerformed (ActionEvent e){
+                txtf.setText(txtf.getText()+"√");
+            }
+        });
+        btn17.addActionListener(new ActionListener() {
+            public void actionPerformed (ActionEvent e){
+                txtf.setText(txtf.getText()+"^");
+            }
+        });
+        btn18.addActionListener(new ActionListener() {
+            public void actionPerformed (ActionEvent e){
+                txtf.setText(txtf.getText()+"!");
+            }
+        });
+        btn19.addActionListener(new ActionListener() {
+            public void actionPerformed (ActionEvent e){
+                txtf.setText(txtf.getText()+"/");
+            }
+        });
+
+        //Numeros
+        btn4.addActionListener(new ActionListener() {
+            public void actionPerformed (ActionEvent e){
+                txtf.setText(txtf.getText()+"1");
+            }
+        });
+
+        btn5.addActionListener(new ActionListener() {
+            public void actionPerformed (ActionEvent e){
+                txtf.setText(txtf.getText()+"2");
+            }
+        });
+
+        btn3.addActionListener(new ActionListener() {
+            public void actionPerformed (ActionEvent e){
+                String texto = String.valueOf(txtf.getText());
+                int operacion = Integer.parseInt(texto);
+                resultado.setText(String.valueOf(operacion));
+            }
+        });
+    }
+
+    public int [] encontrarNumeros (JTextField txtf){
+        for (int i = 0; i < String.valueOf(txtf.getText()).length(); i++){
+
+        }
     }
 }
