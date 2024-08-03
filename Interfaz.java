@@ -2,9 +2,6 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.swing.*;
 
 public class Interfaz extends JFrame{
@@ -145,13 +142,58 @@ public class Interfaz extends JFrame{
                 txtf.setText(txtf.getText()+"1");
             }
         });
-
         btn5.addActionListener(new ActionListener() {
             public void actionPerformed (ActionEvent e){
                 txtf.setText(txtf.getText()+"2");
             }
         });
-
+        btn6.addActionListener(new ActionListener() {
+            public void actionPerformed (ActionEvent e){
+                txtf.setText(txtf.getText()+"3");
+            }
+        });
+        btn8.addActionListener(new ActionListener() {
+            public void actionPerformed (ActionEvent e){
+                txtf.setText(txtf.getText()+"4");
+            }
+        });
+        btn9.addActionListener(new ActionListener() {
+            public void actionPerformed (ActionEvent e){
+                txtf.setText(txtf.getText()+"5");
+            }
+        });
+        btn10.addActionListener(new ActionListener() {
+            public void actionPerformed (ActionEvent e){
+                txtf.setText(txtf.getText()+"6");
+            }
+        });
+        btn12.addActionListener(new ActionListener() {
+            public void actionPerformed (ActionEvent e){
+                txtf.setText(txtf.getText()+"7");
+            }
+        });
+        btn13.addActionListener(new ActionListener() {
+            public void actionPerformed (ActionEvent e){
+                txtf.setText(txtf.getText()+"8");
+            }
+        });
+        btn14.addActionListener(new ActionListener() {
+            public void actionPerformed (ActionEvent e){
+                txtf.setText(txtf.getText()+"9");
+            }
+        });
+        btn1.addActionListener(new ActionListener() {
+            public void actionPerformed (ActionEvent e){
+                txtf.setText(txtf.getText()+"0");
+            }
+        });
+        //Punto
+        btn2.addActionListener(new ActionListener() {
+            public void actionPerformed (ActionEvent e){
+                txtf.setText(txtf.getText()+".");
+            }
+        });
+        //Resultado
         btn3.addActionListener(new ActionListener() {
             public void actionPerformed (ActionEvent e){
                 String texto = String.valueOf(txtf.getText());
@@ -161,9 +203,4 @@ public class Interfaz extends JFrame{
         });
     }
 
-    public int [] encontrarNumeros (JTextField txtf){
-        for (int i = 0; i < String.valueOf(txtf.getText()).length(); i++){
-
-        }
-    }
 }
