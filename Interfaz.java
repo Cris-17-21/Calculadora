@@ -12,6 +12,7 @@ public class Interfaz extends JFrame{
     int auxResultado = 0;
     String [] operaciones = {"+", "-", "x", "/", "^", "!", "√"};
     int xd = 0;
+    int auxPotencia = 0;
 
     public Interfaz (){
         super("Calculadora");
@@ -122,7 +123,6 @@ public class Interfaz extends JFrame{
                     txtf.setText(txtf.getText()+"-");
                     xd = 1;
                 } 
-                operacion = 1;
                 operacion = 2;
             }
         });
@@ -155,16 +155,16 @@ public class Interfaz extends JFrame{
         });
         btn18.addActionListener(new ActionListener() {
             public void actionPerformed (ActionEvent e){
-                if (xd == 0){
-                    txtf.setText(txtf.getText()+"!");
-                    xd = 1;
-                }
+                //Encontrar numero para la operacion
                 operacion = 7;
             }
         });
         btn19.addActionListener(new ActionListener() {
             public void actionPerformed (ActionEvent e){
-                txtf.setText(txtf.getText()+"/");
+                if (xd == 0){
+                    txtf.setText(txtf.getText()+"/");
+                    xd = 1;
+                }
                 operacion = 4;
             }
         });
