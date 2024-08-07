@@ -5,9 +5,13 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class Interfaz extends JFrame{
-    int [] numeros = {0, 0};
+    double [] numeros = {0, 0};
     int operacion;
     int auxiliar = 0;
+    double numResultado = 0;
+    int auxResultado = 0;
+    String [] operaciones = {"+", "-", "x", "/", "^", "!", "√"};
+    int xd = 0;
 
     public Interfaz (){
         super("Calculadora");
@@ -105,37 +109,56 @@ public class Interfaz extends JFrame{
         //Suma = 1; Resta = 2; Multiplicacion = 3; Division = 4; Raiz = 5; Potencia = 6; Factorial = 7
         btn7.addActionListener(new ActionListener() {
             public void actionPerformed (ActionEvent e){
-                txtf.setText(txtf.getText()+"+");
+                if (xd == 0){
+                    txtf.setText(txtf.getText()+"+");
+                    xd = 1;
+                } 
                 operacion = 1;
             }
         });
         btn11.addActionListener(new ActionListener() {
             public void actionPerformed (ActionEvent e){
-                txtf.setText(txtf.getText()+"-");
+                if (xd == 0){
+                    txtf.setText(txtf.getText()+"-");
+                    xd = 1;
+                } 
+                operacion = 1;
                 operacion = 2;
             }
         });
         btn15.addActionListener(new ActionListener() {
             public void actionPerformed (ActionEvent e){
-                txtf.setText(txtf.getText()+"x");
+                if (xd == 0){
+                    txtf.setText(txtf.getText()+"x");
+                    xd = 1;
+                } 
                 operacion = 3;
             }
         });
         btn16.addActionListener(new ActionListener() {
             public void actionPerformed (ActionEvent e){
-                txtf.setText(txtf.getText()+"√");
+                if (xd == 0){
+                    txtf.setText(txtf.getText()+"√");
+                    xd = 1;
+                } 
                 operacion = 5;
             }
         });
         btn17.addActionListener(new ActionListener() {
             public void actionPerformed (ActionEvent e){
-                txtf.setText(txtf.getText()+"^");
+                if (xd == 0){
+                    txtf.setText(txtf.getText()+"^");
+                    xd = 1;
+                } 
                 operacion = 6;
             }
         });
         btn18.addActionListener(new ActionListener() {
             public void actionPerformed (ActionEvent e){
-                txtf.setText(txtf.getText()+"!");
+                if (xd == 0){
+                    txtf.setText(txtf.getText()+"!");
+                    xd = 1;
+                }
                 operacion = 7;
             }
         });
@@ -257,7 +280,14 @@ public class Interfaz extends JFrame{
         btn3.addActionListener(new ActionListener() {
             public void actionPerformed (ActionEvent e){
                 auxiliar = 0;
+                xd = 0;
             }
         });
+    }
+
+    public void encontrarNumeros (JTextField txt){
+        for (int i = 0; i < operaciones.length; i++){
+            
+        }
     }
 }
