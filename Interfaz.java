@@ -5,7 +5,9 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class Interfaz extends JFrame{
+    int [] numeros = {0, 0};
     int operacion;
+    int auxiliar = 0;
 
     public Interfaz (){
         super("Calculadora");
@@ -147,52 +149,102 @@ public class Interfaz extends JFrame{
         //Numeros
         btn4.addActionListener(new ActionListener() {
             public void actionPerformed (ActionEvent e){
-                txtf.setText(txtf.getText()+"1");
+                if(auxiliar == 0){
+                    txtf.setText("1");
+                    auxiliar = 1;
+                } else {
+                    txtf.setText(txtf.getText()+"1");
+                }
             }
         });
         btn5.addActionListener(new ActionListener() {
             public void actionPerformed (ActionEvent e){
-                txtf.setText(txtf.getText()+"2");
+                if(auxiliar == 0){
+                    txtf.setText("2");
+                    auxiliar = 1;
+                } else {
+                    txtf.setText(txtf.getText()+"2");
+                }
             }
         });
         btn6.addActionListener(new ActionListener() {
             public void actionPerformed (ActionEvent e){
-                txtf.setText(txtf.getText()+"3");
+                if(auxiliar == 0){
+                    txtf.setText("3");
+                    auxiliar = 1;
+                } else {
+                    txtf.setText(txtf.getText()+"3");
+                }
             }
         });
         btn8.addActionListener(new ActionListener() {
             public void actionPerformed (ActionEvent e){
-                txtf.setText(txtf.getText()+"4");
+                if(auxiliar == 0){
+                    txtf.setText("4");
+                    auxiliar = 1;
+                } else {
+                    txtf.setText(txtf.getText()+"4");
+                }
             }
         });
         btn9.addActionListener(new ActionListener() {
             public void actionPerformed (ActionEvent e){
-                txtf.setText(txtf.getText()+"5");
+                if(auxiliar == 0){
+                    txtf.setText("5");
+                    auxiliar = 1;
+                } else {
+                    txtf.setText(txtf.getText()+"5");
+                }
             }
         });
         btn10.addActionListener(new ActionListener() {
             public void actionPerformed (ActionEvent e){
-                txtf.setText(txtf.getText()+"6");
+                if(auxiliar == 0){
+                    txtf.setText("6");
+                    auxiliar = 1;
+                } else {
+                    txtf.setText(txtf.getText()+"6");
+                }
             }
         });
         btn12.addActionListener(new ActionListener() {
             public void actionPerformed (ActionEvent e){
-                txtf.setText(txtf.getText()+"7");
+                if(auxiliar == 0){
+                    txtf.setText("7");
+                    auxiliar = 1;
+                } else {
+                    txtf.setText(txtf.getText()+"7");
+                }
             }
         });
         btn13.addActionListener(new ActionListener() {
             public void actionPerformed (ActionEvent e){
-                txtf.setText(txtf.getText()+"8");
+                if(auxiliar == 0){
+                    txtf.setText("8");
+                    auxiliar = 1;
+                } else {
+                    txtf.setText(txtf.getText()+"8");
+                }
             }
         });
         btn14.addActionListener(new ActionListener() {
             public void actionPerformed (ActionEvent e){
-                txtf.setText(txtf.getText()+"9");
+                if(auxiliar == 0){
+                    txtf.setText("9");
+                    auxiliar = 1;
+                } else {
+                    txtf.setText(txtf.getText()+"9");
+                }
             }
         });
         btn1.addActionListener(new ActionListener() {
             public void actionPerformed (ActionEvent e){
-                txtf.setText(txtf.getText()+"0");
+                if(auxiliar == 0){
+                    txtf.setText("0");
+                    auxiliar = 1;
+                } else {
+                    txtf.setText(txtf.getText()+"0");
+                }
             }
         });
         //Punto
@@ -202,5 +254,10 @@ public class Interfaz extends JFrame{
             }
         });
         //Resultado
+        btn3.addActionListener(new ActionListener() {
+            public void actionPerformed (ActionEvent e){
+                auxiliar = 0;
+            }
+        });
     }
 }
