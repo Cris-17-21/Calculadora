@@ -209,39 +209,60 @@ public class Interfaz extends JFrame{
 
 
         //Operaciones
-        btn7.addActionListener(new ActionListener() {
+        btn7.addActionListener(new ActionListener() { //suma
             public void actionPerformed (ActionEvent e){
+                operacion = 1;
                 if (aux == 1){
                     txtf.setText(String.valueOf(result) + "+");
                     aux = 0;
                 } else {
-                    txtf.setText(txtf.getText() + "+");
+                    String auxii = String.valueOf(txtf.getText());
+                    char ultimo = auxii.charAt(auxii.length()-1);
+                    if (ultimo == '+' || ultimo == '-' || ultimo == 'x' || ultimo == '/' || ultimo == '^'){
+                        String xddd = auxii.substring(0, auxii.length()-1);
+                        txtf.setText(xddd + "+");
+                    } else {
+                        txtf.setText(txtf.getText() + "+");
+                    }
                 }
-                operacion = 1;
             }
         });
 
-        btn11.addActionListener(new ActionListener() {
+        btn11.addActionListener(new ActionListener() { //resta
             public void actionPerformed (ActionEvent e){
+                operacion = 2;
                 if (aux == 1){
                     txtf.setText(String.valueOf(result) + "-");
                     aux = 0;
                 } else {
-                    txtf.setText(txtf.getText() + "-");
+                    String auxii = String.valueOf(txtf.getText());
+                    char ultimo = auxii.charAt(auxii.length()-1);
+                    if (ultimo == '+' || ultimo == '-' || ultimo == 'x' || ultimo == '/' || ultimo == '^'){
+                        String xddd = auxii.substring(0, auxii.length()-1);
+                        txtf.setText(xddd + "-");
+                    } else {
+                        txtf.setText(txtf.getText() + "-");
+                    }
                 }
-                operacion = 2;
             }
         });
 
-        btn15.addActionListener(new ActionListener() {
+        btn15.addActionListener(new ActionListener() { //multiplicacion
             public void actionPerformed (ActionEvent e){
+                operacion = 3;
                 if (aux == 1){
                     txtf.setText(String.valueOf(result) + "x");
                     aux = 0;
                 } else {
-                    txtf.setText(txtf.getText() + "x");
+                    String auxii = String.valueOf(txtf.getText());
+                    char ultimo = auxii.charAt(auxii.length()-1);
+                    if (ultimo == '+' || ultimo == '-' || ultimo == 'x' || ultimo == '/' || ultimo == '^'){
+                        String xddd = auxii.substring(0, auxii.length()-1);
+                        txtf.setText(xddd + "x");
+                    } else {
+                        txtf.setText(txtf.getText() + "x");
+                    }
                 }
-                operacion = 3;
             }
         });
 
