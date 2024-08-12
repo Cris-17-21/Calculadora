@@ -9,6 +9,7 @@ public class Interfaz extends JFrame{
     double primerNumero = 0;
     double segundoNumero = 0;
     int aux = 1;
+    int operacion = 0;
 
     public Interfaz (){
         super("Calculadora");
@@ -206,11 +207,17 @@ public class Interfaz extends JFrame{
             }
         });
 
-        
+
         //Operaciones
         btn7.addActionListener(new ActionListener() {
             public void actionPerformed (ActionEvent e){
-                txtf.setText(txtf.getText() + "+");
+                if (aux == 1){
+                    txtf.setText(String.valueOf(result) + "+");
+                    aux = 0;
+                } else {
+                    txtf.setText(txtf.getText() + "+");
+                }
+                operacion = 1;
             }
         });
 
@@ -250,6 +257,8 @@ public class Interfaz extends JFrame{
             }
         });*/
 
+
+        //Resultado
         btn20.addActionListener(new ActionListener() {
             public void actionPerformed (ActionEvent e){
                 txtf.setText("");
@@ -260,6 +269,9 @@ public class Interfaz extends JFrame{
         btn3.addActionListener(new ActionListener() {
             public void actionPerformed (ActionEvent e){
                 encontrarNumeros(txtf);
+                result = hacerOperacion(operacion, primerNumero, segundoNumero);
+                resultado.setText(String.valueOf(result));
+                aux = 1;
             }
         });
     }
@@ -269,13 +281,23 @@ public class Interfaz extends JFrame{
         for (int i = 0; i < texto.length(); i++){
             if (texto.charAt(i) == '+' || texto.charAt(i) == '-' || texto.charAt(i) == 'x' || texto.charAt(i) == '/' || texto.charAt(i) == '^'){
                 String num1 = texto.substring(0, i);
-                String num2 = texto.substring(i, texto.length());
+                String num2 = texto.substring(i+1);
                 primerNumero = Double.parseDouble(num1);
                 segundoNumero = Double.parseDouble(num2);
             } else if (texto.charAt(i) == '√' || texto.charAt(i) == '!'){
                 String num1 = texto.substring(0, i);
                 primerNumero = Double.parseDouble(num1);
             }
+        }
+    }
+
+    public double hacerOperacion (int operacion, double num1, double num2){
+        double resultadoo = 0;
+        if (operacion == 1){
+            resultadoo = num1 + num2;
+            return resultadoo;
+        } else {
+            return resultadoo;
         }
     }
 }
