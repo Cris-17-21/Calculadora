@@ -285,6 +285,25 @@ public class Interfaz extends JFrame{
             }
         });
 
+        btn17.addActionListener(new ActionListener() { //division
+            public void actionPerformed (ActionEvent e){
+                operacion = 5;
+                if (aux == 1){
+                    txtf.setText(String.valueOf(result) + "^");
+                    aux = 0;
+                } else {
+                    String auxii = String.valueOf(txtf.getText());
+                    char ultimo = auxii.charAt(auxii.length()-1);
+                    if (ultimo == '+' || ultimo == '-' || ultimo == 'x' || ultimo == '/' || ultimo == '^'){
+                        String xddd = auxii.substring(0, auxii.length()-1);
+                        txtf.setText(xddd + "^");
+                    } else {
+                        txtf.setText(txtf.getText() + "^");
+                    }
+                }
+            }
+        });
+
         //Potencia falta mejorar lógica xddd
         /*btn18.addActionListener(new ActionListener() {
             public void actionPerformed (ActionEvent e){
@@ -348,9 +367,11 @@ public class Interfaz extends JFrame{
                 String num2 = texto.substring(i+1);
                 primerNumero = Double.parseDouble(num1);
                 segundoNumero = Double.parseDouble(num2);
+                break;
             } else if (texto.charAt(i) == '√' || texto.charAt(i) == '!'){
                 String num1 = texto.substring(0, i);
                 primerNumero = Double.parseDouble(num1);
+                break;
             }
         }
     }
@@ -369,8 +390,10 @@ public class Interfaz extends JFrame{
         } else if (operacion == 4) {
             resultadoo = num1 / num2;
             return resultadoo;
-        }
-        else {
+        } else if (operacion == 5){
+            resultadoo = Math.pow(num1, num2);
+            return resultadoo;
+        }else {
             return resultadoo;
         }
     }
