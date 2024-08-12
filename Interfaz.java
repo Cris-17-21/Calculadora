@@ -1,7 +1,5 @@
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class Interfaz extends JFrame{
@@ -55,9 +53,10 @@ public class Interfaz extends JFrame{
         JButton btn17 = new JButton("^");
         JButton btn18 = new JButton("!");
         JButton btn19 = new JButton("/");
+        JButton btn20 = new JButton("C");
         panel.add(btn1); panel.add(btn2); panel.add(btn3); panel.add(btn4); panel.add(btn5); panel.add(btn6); panel.add(btn7); panel.add(btn8); panel.add(btn9);
         panel.add(btn10); panel.add(btn11); panel.add(btn12); panel.add(btn13); panel.add(btn14); panel.add(btn15); panel.add(btn16); panel.add(btn17);
-        panel.add(btn18); panel.add(btn19);
+        panel.add(btn18); panel.add(btn19); panel.add(btn20);
         btn1.setFont(new Font(getName(), 1, 30));
         btn2.setFont(new Font(getName(), 1, 30));
         btn3.setFont(new Font(getName(), 1, 30));
@@ -77,6 +76,7 @@ public class Interfaz extends JFrame{
         btn17.setFont(new Font(getName(), 1, 30));
         btn18.setFont(new Font(getName(), 1, 30));
         btn19.setFont(new Font(getName(), 1, 30));
+        btn20.setFont(new Font(getName(), 1, 30));
         btn16.setBounds(20, 180, 70, 70);
         btn17.setBounds(120, 180, 70, 70);
         btn18.setBounds(220, 180, 70, 70);
@@ -95,13 +95,8 @@ public class Interfaz extends JFrame{
         btn7.setBounds(320, 480, 70, 70);
         btn1.setBounds(20, 580, 70, 70);
         btn2.setBounds(120, 580, 70, 70);
-        btn3.setBounds(220, 580, 170, 70);
-
+        btn3.setBounds(320, 580, 70, 70);
+        btn20.setBounds(220, 580, 70, 70);
         //EVENTOS
-        btn7.addActionListener(new ActionListener() {
-            public void actionPerformed (ActionEvent e){
-                txtf.setText("+");
-            }
-        });
     }
 }
