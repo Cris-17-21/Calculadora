@@ -221,6 +221,30 @@ public class Interfaz extends JFrame{
             }
         });
 
+        btn11.addActionListener(new ActionListener() {
+            public void actionPerformed (ActionEvent e){
+                if (aux == 1){
+                    txtf.setText(String.valueOf(result) + "-");
+                    aux = 0;
+                } else {
+                    txtf.setText(txtf.getText() + "-");
+                }
+                operacion = 2;
+            }
+        });
+
+        btn15.addActionListener(new ActionListener() {
+            public void actionPerformed (ActionEvent e){
+                if (aux == 1){
+                    txtf.setText(String.valueOf(result) + "x");
+                    aux = 0;
+                } else {
+                    txtf.setText(txtf.getText() + "x");
+                }
+                operacion = 3;
+            }
+        });
+
         //Potencia falta mejorar lógica xddd
         /*btn18.addActionListener(new ActionListener() {
             public void actionPerformed (ActionEvent e){
@@ -278,7 +302,7 @@ public class Interfaz extends JFrame{
 
     public void encontrarNumeros (JTextField txt){
         String texto = String.valueOf(txt.getText());
-        for (int i = 0; i < texto.length(); i++){
+        for (int i = 1; i < texto.length(); i++){
             if (texto.charAt(i) == '+' || texto.charAt(i) == '-' || texto.charAt(i) == 'x' || texto.charAt(i) == '/' || texto.charAt(i) == '^'){
                 String num1 = texto.substring(0, i);
                 String num2 = texto.substring(i+1);
@@ -295,6 +319,12 @@ public class Interfaz extends JFrame{
         double resultadoo = 0;
         if (operacion == 1){
             resultadoo = num1 + num2;
+            return resultadoo;
+        } else if (operacion == 2){
+            resultadoo = num1 - num2;
+            return resultadoo;
+        } else if (operacion == 3){
+            resultadoo = num1*num2;
             return resultadoo;
         } else {
             return resultadoo;
