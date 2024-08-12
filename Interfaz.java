@@ -266,6 +266,25 @@ public class Interfaz extends JFrame{
             }
         });
 
+        btn19.addActionListener(new ActionListener() { //division
+            public void actionPerformed (ActionEvent e){
+                operacion = 4;
+                if (aux == 1){
+                    txtf.setText(String.valueOf(result) + "/");
+                    aux = 0;
+                } else {
+                    String auxii = String.valueOf(txtf.getText());
+                    char ultimo = auxii.charAt(auxii.length()-1);
+                    if (ultimo == '+' || ultimo == '-' || ultimo == 'x' || ultimo == '/' || ultimo == '^'){
+                        String xddd = auxii.substring(0, auxii.length()-1);
+                        txtf.setText(xddd + "/");
+                    } else {
+                        txtf.setText(txtf.getText() + "/");
+                    }
+                }
+            }
+        });
+
         //Potencia falta mejorar lógica xddd
         /*btn18.addActionListener(new ActionListener() {
             public void actionPerformed (ActionEvent e){
@@ -347,7 +366,11 @@ public class Interfaz extends JFrame{
         } else if (operacion == 3){
             resultadoo = num1*num2;
             return resultadoo;
-        } else {
+        } else if (operacion == 4) {
+            resultadoo = num1 / num2;
+            return resultadoo;
+        }
+        else {
             return resultadoo;
         }
     }
