@@ -285,7 +285,7 @@ public class Interfaz extends JFrame{
             }
         });
 
-        btn17.addActionListener(new ActionListener() { //division
+        btn17.addActionListener(new ActionListener() { //potencia
             public void actionPerformed (ActionEvent e){
                 operacion = 5;
                 if (aux == 1){
@@ -338,6 +338,7 @@ public class Interfaz extends JFrame{
             }
         });
 
+        
 
         //Resultado
         btn20.addActionListener(new ActionListener() {
