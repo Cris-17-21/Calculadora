@@ -304,10 +304,37 @@ public class Interfaz extends JFrame{
             }
         });
 
-        //Factorial falta mejorar lógica xddd
-        btn18.addActionListener(new ActionListener() {
+        btn18.addActionListener(new ActionListener() { //Factorial
             public void actionPerformed (ActionEvent e){
-                encontrarNumeros(txtf);
+                String num = String.valueOf(txtf.getText());
+                primerNumero = Math.round(Double.parseDouble(num));
+                if (aux == 1){
+                    txtf.setText(String.valueOf(result)+"!");
+                    if(result == 0){
+                        resultado.setText("1.0");
+                    } else {
+                        primerNumero = result;
+                        for(int i = 1; i <= primerNumero; i++){
+                            result = result * i;
+                        }
+                        txtf.setText(primerNumero + "!");
+                        resultado.setText(String.valueOf(result));
+                    }
+                    aux = 0;
+                } else {
+                    result = 1;
+                    if (primerNumero == 0){
+                        txtf.setText("0!");
+                        resultado.setText("1.0");
+                    } else {
+                        for(int i = 1; i <= primerNumero; i++){
+                            result = result * i;
+                        }
+                        txtf.setText(primerNumero + "!");
+                        resultado.setText(String.valueOf(result));
+                    }
+                    aux = 1;
+                }
             }
         });
 
@@ -316,6 +343,7 @@ public class Interfaz extends JFrame{
         btn20.addActionListener(new ActionListener() {
             public void actionPerformed (ActionEvent e){
                 txtf.setText("");
+                resultado.setText("");
                 result = 0;
             }
         });
