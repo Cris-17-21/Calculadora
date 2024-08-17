@@ -218,7 +218,7 @@ public class Interfaz extends JFrame{
                 } else {
                     String auxii = String.valueOf(txtf.getText());
                     char ultimo = auxii.charAt(auxii.length()-1);
-                    if (ultimo == '+' || ultimo == '-' || ultimo == 'x' || ultimo == '/' || ultimo == '^'){
+                    if (ultimo == '+' || ultimo == '-' || ultimo == 'x' || ultimo == '/' || ultimo == '^'|| ultimo == '.'){
                         String xddd = auxii.substring(0, auxii.length()-1);
                         txtf.setText(xddd + "+");
                     } else {
@@ -237,7 +237,7 @@ public class Interfaz extends JFrame{
                 } else {
                     String auxii = String.valueOf(txtf.getText());
                     char ultimo = auxii.charAt(auxii.length()-1);
-                    if (ultimo == '+' || ultimo == '-' || ultimo == 'x' || ultimo == '/' || ultimo == '^'){
+                    if (ultimo == '+' || ultimo == '-' || ultimo == 'x' || ultimo == '/' || ultimo == '^'|| ultimo == '.'){
                         String xddd = auxii.substring(0, auxii.length()-1);
                         txtf.setText(xddd + "-");
                     } else {
@@ -256,7 +256,7 @@ public class Interfaz extends JFrame{
                 } else {
                     String auxii = String.valueOf(txtf.getText());
                     char ultimo = auxii.charAt(auxii.length()-1);
-                    if (ultimo == '+' || ultimo == '-' || ultimo == 'x' || ultimo == '/' || ultimo == '^'){
+                    if (ultimo == '+' || ultimo == '-' || ultimo == 'x' || ultimo == '/' || ultimo == '^'|| ultimo == '.'){
                         String xddd = auxii.substring(0, auxii.length()-1);
                         txtf.setText(xddd + "x");
                     } else {
@@ -275,7 +275,7 @@ public class Interfaz extends JFrame{
                 } else {
                     String auxii = String.valueOf(txtf.getText());
                     char ultimo = auxii.charAt(auxii.length()-1);
-                    if (ultimo == '+' || ultimo == '-' || ultimo == 'x' || ultimo == '/' || ultimo == '^'){
+                    if (ultimo == '+' || ultimo == '-' || ultimo == 'x' || ultimo == '/' || ultimo == '^'|| ultimo == '.'){
                         String xddd = auxii.substring(0, auxii.length()-1);
                         txtf.setText(xddd + "/");
                     } else {
@@ -294,7 +294,7 @@ public class Interfaz extends JFrame{
                 } else {
                     String auxii = String.valueOf(txtf.getText());
                     char ultimo = auxii.charAt(auxii.length()-1);
-                    if (ultimo == '+' || ultimo == '-' || ultimo == 'x' || ultimo == '/' || ultimo == '^'){
+                    if (ultimo == '+' || ultimo == '-' || ultimo == 'x' || ultimo == '/' || ultimo == '^'|| ultimo == '.'){
                         String xddd = auxii.substring(0, auxii.length()-1);
                         txtf.setText(xddd + "^");
                     } else {
@@ -338,7 +338,25 @@ public class Interfaz extends JFrame{
             }
         });
 
-        
+        //Coma decimal
+        btn2.addActionListener(new ActionListener() {
+            public void actionPerformed (ActionEvent e){
+                int resultadazo = (int)(result);
+                if (aux == 1){
+                    txtf.setText(String.valueOf(resultadazo) + ".");
+                    aux = 0;
+                } else {
+                    String auxii = String.valueOf(txtf.getText());
+                    char ultimo = auxii.charAt(auxii.length()-1);
+                    if (ultimo == '+' || ultimo == '-' || ultimo == 'x' || ultimo == '/' || ultimo == '^' || ultimo == '.'){
+                        String xddd = auxii.substring(0, auxii.length()-1);
+                        txtf.setText(xddd + ".");
+                    } else {
+                        txtf.setText(txtf.getText() + ".");
+                    }
+                }
+            }
+        });
 
         //Resultado
         btn20.addActionListener(new ActionListener() {
@@ -346,6 +364,7 @@ public class Interfaz extends JFrame{
                 txtf.setText("");
                 resultado.setText("");
                 result = 0;
+                operacion = 0;
             }
         });
 
@@ -401,7 +420,10 @@ public class Interfaz extends JFrame{
 
     public double hacerOperacion (int operacion, double num1, double num2){
         double resultadoo = 0;
-        if (operacion == 1){
+        if(operacion == 0){
+            resultadoo = num1;
+            return resultadoo;
+        } else if (operacion == 1){
             resultadoo = num1 + num2;
             return resultadoo;
         } else if (operacion == 2){
